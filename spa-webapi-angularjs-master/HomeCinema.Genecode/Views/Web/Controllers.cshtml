@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "WebController";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <section id="loginForm">
+            @using (Html.BeginForm("Controllers", "Web", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+
+                <div class="form-group">
+                    @Html.Label("Table",new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBox("table")
+                        </div>
+                    
+                </div>
+                <div class="form-group">
+                    @Html.Label("",new { @class = "col-md-2 control-label" })
+                    <div class="col-md-12">
+                        @Html.TextArea("controllers", (string)ViewData["Controllersr"], new { @class = "col-md-12" })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Getcontroller" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+    
+</div>
+

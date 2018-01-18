@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>Joli Admin - Responsive Bootstrap Admin Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="/Scripts/Template/css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+    <!-- START PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- START PAGE SIDEBAR -->
+        <side-bar></side-bar>
+        <!-- END PAGE SIDEBAR -->
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+
+            <!-- START X-NAVIGATION VERTICAL -->
+            <top-bar></top-bar>
+            <!-- END X-NAVIGATION VERTICAL -->
+            <!-- START BREADCRUMB -->
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Thành viên</li>
+            </ul>
+            <!-- END BREADCRUMB -->
+            <!-- PAGE TITLE -->
+            <div class="page-title">
+                <h2><span class="fa fa-users"></span> Thành viên </h2>
+            </div>
+            <!-- END PAGE TITLE -->
+            <!-- PAGE CONTENT WRAPPER -->
+            <div class="page-content-wrap">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <span class="fa fa-search"></span>
+                                                </div>
+                                                <!--<input type="text" class="form-control" placeholder="Who are you looking for?"/>-->
+                                                <input id="inputSearchCustomers" type="search" ng-model="filterUsers" class="form-control" placeholder="Who are you looking for?">
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-primary" ng-click="search();"><i class="glyphicon glyphicon-search"></i></button>
+                                                    <button class="btn btn-primary" ng-click="clearSearch();"><i class="glyphicon glyphicon-remove-sign"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="/#/register" class="btn btn-success btn-block"><span class="fa fa-plus"></span>Thêm mới</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" ng-repeat="user in Users | filter:filterUsers">
+                        <!-- CONTACT ITEM -->
+                        <div class="panel panel-default">
+                            <div class="panel-body profile">
+                                <div class="profile-image">
+                                    <img src="/Scripts/Template/assets/images/users/user3.jpg" alt="{{user.Username}}" />
+                                </div>
+                                <div class="profile-data">
+                                    <div class="profile-data-name">{{user.Username}}</div>
+                                    <div class="profile-data-title">
+                                        <div class="row">
+                                            <!--<label class="control-label">Color</label>
+                                            <button ng-click="open()">Show</button>
+                                            <button ng-click="close()">Hide</button>-->
+                                            <color-picker ng-model="color"
+                                                          options="options"
+                                                          api="api"
+                                                          event-api="eventApi"></color-picker>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-controls">
+                                    <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                    <a href="#" class="profile-control-right"><span class="fa fa-phone"></span></a>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="contact-info">
+                                    <!--<p><small>Mobile</small><br />(555) 555-55-55</p>-->
+                                    <p><small>Email</small><br />{{user.Email}}</p>
+                                    <p><small><a class="pull-left" ng-href="#/userroles/{{user.Id}}" title="{{user.Title}}">Phân quyền</a></small></p> <br />
+                                    <p><small><a class="pull-left" ng-href="#/calendars/{{user.Id}}" title="{{user.Title}}">Lịch giảng dạy</a></small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END CONTACT ITEM -->
+                    </div>
+                </div>
+                <!-- PAGING -->
+
+                <custom-pager page="{{page}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></custom-pager>
+                <!-- END PAGING -->
+            </div>
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+    <!-- MESSAGE BOX-->
+    <mb-signout></mb-signout>
+    <!-- END MESSAGE BOX-->
+    <!-- START PRELOADS -->
+    <audio id="audio-alert" src="/Scripts/Template/audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="/Scripts/Template/audio/fail.mp3" preload="auto"></audio>
+    <!-- END PRELOADS -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="/Scripts/Template/js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Template/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Template/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
+    <!-- START THIS PAGE PLUGINS-->
+    <script type="text/javascript" src="/Scripts/Template/js/plugins/icheck/icheck.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Template/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="/Scripts/Template/js/plugins.js"></script>
+    <script type="text/javascript" src="/Scripts/Template/js/actions.js"></script>
+    <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->
+</body>
+</html>
+
+
+
+
+
+

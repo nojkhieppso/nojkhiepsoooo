@@ -1,0 +1,51 @@
+﻿
+<div  class="page-sidebar" ng-if="userData.isUserLoggedIn">
+    <!-- START X-NAVIGATION -->
+    <ul class="x-navigation">
+        <li class="xn-logo">
+            <a href="#/">Gymkid</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile">
+            <a href="#" class="profile-mini">
+                <img src="/Scripts/Template/assets/images/users/avatar.jpg" alt="{{username}}" />
+            </a>
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="/Scripts/Template/assets/images/users/avatar.jpg" alt="{{username}}" />
+                </div>
+                <div class="profile-data">
+                    <div class="profile-data-name">{{username}}</div>
+                    <!--<div class="profile-data-title">{{authdata}}{{userData}}</div>-->
+                </div>
+                <div class="profile-controls">
+                    <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
+                    <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                </div>
+            </div>
+        </li>
+
+        <li class="xn-title">Menu</li>
+        <li>
+            <a href="#/calendars"><span class="fa fa-calendar"></span><span class="xn-text">Lập lịch</span></a>
+        </li>
+        <li>
+            <a href="#/users"><span class="fa fa-user"></span> <span class="xn-text">Thành viên</span></a>
+        </li>
+        <li>
+            <a href="#/roles"><span class="fa fa-key"></span><span class="xn-text">Phân quyền</span></a>
+            
+        </li>
+        <li>
+            <a href="#/schools"><span class="fa fa-home"></span><span class="xn-text">Quản lý trường học</span></a>
+            
+        </li>
+        <li>
+            <a href="#/classrooms"><span class="fa fa-home"></span><span class="xn-text">Quản lý lớp</span></a>
+        </li>
+        <li>
+            <a href="#/lessions"><span class="fa fa-book"></span><span class="xn-text">Quản lý tiết</span></a>
+        </li>
+    </ul>
+    <!-- END X-NAVIGATION -->
+</div>

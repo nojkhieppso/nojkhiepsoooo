@@ -1,0 +1,99 @@
+﻿
+
+<div class="page-container">
+
+    <!-- START PAGE SIDEBAR -->
+    <side-bar></side-bar>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        <top-bar></top-bar>
+        <!-- END X-NAVIGATION VERTICAL -->
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb push-down-0">
+            <li><a href="#">Home</a></li>
+            <li class="active">group</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- START CONTENT FRAME -->
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Groups</h3>
+                        </div>
+                        <div class="panel-body panel-body-table">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-actions">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">STT</th>
+                                            <th width="60%">Group</th>
+                                            <th width="30%">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr id="{{group.Title}}" ng-repeat="group in Groups">
+                                            <td class="text-center">{{$index + 1}}</td>
+                                            <td><strong>{{group.Name}}</strong></td>
+                                            <td>
+                                                <!--<button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button>-->
+                                                <a href="#/groups/edit/{{group.Id}}" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                                <button class="btn btn-danger btn-rounded btn-sm" ng-click="openGroupDialog(group.Id);"><span class="fa fa-times"></span></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Remove <strong>Data</strong> ?</div>
+            <div class="mb-content">
+                <p>Are you sure you want to remove this row?</p>
+                <p>Press Yes if you sure.</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <button class="btn btn-success btn-lg mb-control-yes" ng-click="Delete(groupdelete.ID);">Yes</button>
+                    <button class="btn btn-default btn-lg mb-control-close">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<mb-signout></mb-signout>
+<!-- END MESSAGE BOX-->
+<audio id="audio-alert" src="/Scripts/Template/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="/Scripts/Template/audio/fail.mp3" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="/Scripts/Template/js/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/Scripts/Template/js/plugins/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/Scripts/Template/js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+<!-- START THIS PAGE PLUGINS-->
+<script type="text/javascript" src="/Scripts/Template/js/plugins/icheck/icheck.min.js"></script>
+<script type="text/javascript" src="/Scripts/Template/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+<script type="text/javascript" src="/Scripts/Template/js/demo_tables.js"></script>
+<!-- END THIS PAGE PLUGINS-->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="/Scripts/Template/js/plugins.js"></script>
+<script type="text/javascript" src="/Scripts/Template/js/actions.js"></script>
+<!-- END SCRIPTS -->         

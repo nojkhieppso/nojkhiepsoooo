@@ -1,0 +1,11 @@
+0989069072(Tâm VNPay)
+10004933|221220152669|1080000|VND|VNPAYMENT|20151222142526|Tru?ng ÐH Van Hóa TP.HCM thanh toán h?c phí c?a sinh viên có mã: |::1|648B355E737798993619B4F9C95EF6E0|
+
+
+
+
+TerminalCode=10004933
+orderId=221220151622
+
+
+335692362:h5g7x1(Teamview CDXD so 1)                                                                                                                                                                                                                                                                                                                                                                                                          
